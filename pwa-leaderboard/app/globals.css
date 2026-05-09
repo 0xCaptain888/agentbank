@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-0 text-gray-100;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-surface-2 border border-white/5 rounded-xl p-6 flex flex-col gap-1;
+  }
+  .stat-label {
+    @apply text-xs text-gray-500 uppercase tracking-wider font-medium;
+  }
+  .stat-value {
+    @apply text-2xl font-bold;
+  }
+  .table-container {
+    @apply bg-surface-2 border border-white/5 rounded-xl overflow-hidden;
+  }
+  .table-header {
+    @apply text-xs text-gray-500 uppercase tracking-wider font-medium px-4 py-3 text-left;
+  }
+  .table-cell {
+    @apply px-4 py-3 text-sm;
+  }
+  .table-row {
+    @apply border-t border-white/5 hover:bg-white/[0.02] transition-colors;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-green {
+    @apply bg-emerald-500/10 text-emerald-400;
+  }
+  .badge-red {
+    @apply bg-red-500/10 text-red-400;
+  }
+  .badge-purple {
+    @apply bg-brand-500/10 text-brand-400;
+  }
+}

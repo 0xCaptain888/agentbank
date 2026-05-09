@@ -1,0 +1,48 @@
+{
+  "name": "@agentbank/sdk",
+  "version": "3.0.0",
+  "description": "TypeScript SDK for interacting with AgentBank V3 protocol contracts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "eslint src/",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": ["agentbank", "defi", "sdk", "vault", "intent", "attestation", "web3"],
+  "author": "AgentBank Contributors",
+  "license": "MIT",
+  "dependencies": {
+    "viem": "^2.21.0",
+    "ethers": "^6.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0",
+    "eslint": "^8.57.0"
+  },
+  "peerDependencies": {
+    "viem": ">=2.0.0",
+    "ethers": ">=6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ethers": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": ["dist/", "README.md"]
+}

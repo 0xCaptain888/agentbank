@@ -1,0 +1,41 @@
+## Phala Cloud Application Configuration
+## AgentBank Analyst TEE — SGX-attested LLM inference service
+
+name: agentbank-analyst-tee
+runtime: tappd-sgx
+
+resources:
+  cpu: 2
+  memory: 4096  # MB
+  disk: 10240   # MB
+
+attestation:
+  enabled: true
+  mode: dcap       # Data Center Attestation Primitives
+  report_data: true
+
+network:
+  port: 8000
+  protocol: https
+  health_check:
+    path: /health
+    interval: 30
+
+environment:
+  - name: DEEPSEEK_API_KEY
+    secret: true
+  - name: MODEL_NAME
+    value: deepseek-chat
+  - name: MAX_TOKENS
+    value: "1000"
+  - name: TEMPERATURE
+    value: "0.1"
+
+docker:
+  image: agentbank/analyst-tee:latest
+  dockerfile: Dockerfile
+
+scaling:
+  min_instances: 1
+  max_instances: 3
+  target_cpu_utilization: 70

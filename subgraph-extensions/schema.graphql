@@ -1,0 +1,137 @@
+"""
+AgentBank V3 Subgraph Extensions Schema
+Extends the base subgraph with entities for the token, voting escrow,
+intent system, signal NFTs, and TEE attestations.
+"""
+
+type ABNKToken @entity {
+  id: Bytes! # token address
+  totalSupply: BigInt!
+  maxSupply: BigInt!
+  holderCount: Int!
+  transferCount: BigInt!
+  lastUpdatedBlock: BigInt!
+}
+
+type TokenHolder @entity {
+  id: Bytes! # holder address
+  balance: BigInt!
+  transfersIn: BigInt!
+  transfersOut: BigInt!
+  firstTransferAt: BigInt!
+  lastTransferAt: BigInt!
+}
+
+type TokenTransfer @entity(immutable: true) {
+  id: Bytes! # tx hash + log index
+  from: Bytes!
+  to: Bytes!
+  amount: BigInt!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+  txHash: Bytes!
+}
+
+type TokenApproval @entity {
+  id: Bytes! # owner + spender
+  owner: Bytes!
+  spender: Bytes!
+  amount: BigInt!
+  timestamp: BigInt!
+}
+
+type VotingEscrow @entity {
+  id: Bytes! # contract address
+  totalLocked: BigInt!
+  lockCount: Int!
+  lastUpdatedBlock: BigInt!
+}
+
+type VoteLock @entity {
+  id: Bytes! # user address
+  user: Bytes!
+  amount: BigInt!
+  end: BigInt!
+  votingPower: BigDecimal!
+  createdAt: BigInt!
+  lastModifiedAt: BigInt!
+}
+
+type Intent @entity {
+  id: ID! # intentId as string
+  intentId: BigInt!
+  user: Bytes!
+  asset: Bytes!
+  amount: BigInt!
+  minApyBps: BigInt!
+  maxDrawdownBps: BigInt!
+  duration: BigInt!
+  deadline: BigInt!
+  status: IntentStatus!
+  winningBid: Bid
+  bids: [Bid!]! @derivedFrom(field: "intent")
+  createdAt: BigInt!
+  settledAt: BigInt
+  txHash: Bytes!
+}
+
+enum IntentStatus {
+  Open
+  Filled
+  Expired
+  Cancelled
+}
+
+type Bid @entity(immutable: true) {
+  id: ID! # bidId as string
+  bidId: BigInt!
+  intent: Intent!
+  solver: Bytes!
+  tierVault: Bytes!
+  promisedApy: BigInt!
+  bondPosted: BigInt!
+  timestamp: BigInt!
+  txHash: Bytes!
+}
+
+type SignalNFT @entity {
+  id: ID! # tokenId as string
+  tokenId: BigInt!
+  signalId: BigInt!
+  analyst: Bytes!
+  pnl: BigInt!
+  reasoningHash: Bytes!
+  attestationId: Bytes!
+  owner: Bytes!
+  mintedAt: BigInt!
+  tokenURI: String!
+  txHash: Bytes!
+}
+
+type Attestation @entity {
+  id: Bytes! # runId
+  kind: TEEKind!
+  promptHash: Bytes!
+  outputHash: Bytes!
+  codeHash: Bytes!
+  attesterPubKey: Bytes!
+  timestamp: BigInt!
+  verified: Boolean!
+  blockNumber: BigInt!
+  txHash: Bytes!
+}
+
+enum TEEKind {
+  Phala
+  Marlin
+}
+
+type ProtocolMetrics @entity {
+  id: ID! # "singleton"
+  totalIntents: BigInt!
+  totalBids: BigInt!
+  totalAttestations: BigInt!
+  totalSignalNFTs: BigInt!
+  totalLockedABNK: BigInt!
+  lastUpdatedBlock: BigInt!
+}
