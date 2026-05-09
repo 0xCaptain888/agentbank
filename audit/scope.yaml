@@ -1,0 +1,113 @@
+project: AgentBank V3
+chain: Mantle (chainId 5000)
+compiler: solc 0.8.24
+framework: Foundry + Hardhat
+
+contracts_in_scope:
+  - path: contracts/v3/AgentBankOFT.sol
+    description: LayerZero OFT vault entry for cross-chain deposits
+  - path: contracts/v3/ABNKToken.sol
+    description: ABNK governance token with vote-escrowed locking
+  - path: contracts/v3/VotingEscrow.sol
+    description: veABNK locking and gauge voting
+  - path: contracts/v3/FeeDistributor.sol
+    description: Protocol fee distribution to veABNK holders
+  - path: contracts/v3/SignalAuctionHouse.sol
+    description: Dutch auction for premium signal slots
+  - path: contracts/v3/CommitRevealSignal.sol
+    description: Commit-reveal scheme for front-run resistant signals
+  - path: contracts/v3/IntentRouter.sol
+    description: Intent-based execution routing to solvers
+  - path: contracts/v3/SolverRegistry.sol
+    description: Solver bond and registration
+  - path: contracts/v3/CrossChainEntrypoint.sol
+    description: LayerZero cross-chain deposit aggregation
+  - path: contracts/v3/AlloraConsumer.sol
+    description: Allora oracle integration for LLM inference
+  - path: contracts/v3/OpenGradientReader.sol
+    description: OpenGradient on-chain model reader
+  - path: contracts/v3/TEEAttestationVerifier.sol
+    description: TEE attestation verification for off-chain inference
+  - path: contracts/v3/AntiSybilGuard.sol
+    description: Sybil resistance via Gitcoin Passport + WorldID
+  - path: contracts/v3/SignalNFT.sol
+    description: ERC-721 signal performance NFTs
+  - path: contracts/v3/AgentAccountFactory.sol
+    description: ERC-6551 agent account factory
+  - path: contracts/core/AgentBankVaultV2.sol
+    description: ERC-4626 multi-strategy vault
+  - path: contracts/core/SignalBoardV2.sol
+    description: Analyst signal submission and scoring
+  - path: contracts/risk/CircuitBreaker.sol
+    description: Emergency pause and loss-limit circuit breaker
+  - path: contracts/risk/InsurancePool.sol
+    description: Depositor insurance coverage pool
+  - path: contracts/risk/SlashingPool.sol
+    description: Analyst stake slashing on bad signals
+  - path: contracts/risk/RiskOracle.sol
+    description: On-chain risk parameter feed
+  - path: contracts/risk/AgentBankTimelock.sol
+    description: Governance timelock for admin operations
+  - path: contracts/economy/AnalystRegistry.sol
+    description: Analyst onboarding, staking, and metadata
+  - path: contracts/economy/FeeDistributor.sol
+    description: Analyst and protocol fee splits
+  - path: contracts/economy/PerformanceTracker.sol
+    description: Analyst PnL tracking and decay
+  - path: contracts/identity/IdentityRegistry.sol
+    description: ERC-8004 identity management
+  - path: contracts/identity/ReputationRegistry.sol
+    description: On-chain reputation with exponential decay
+  - path: contracts/identity/ValidationRegistry.sol
+    description: LLM inference validation records
+
+focus_areas:
+  - Access control and privilege escalation
+  - Reentrancy in vault deposit/withdraw flows
+  - Cross-chain message validation (LayerZero)
+  - Oracle manipulation (Allora, Pyth, RiskOracle)
+  - Commit-reveal timing attacks and front-running
+  - Flash loan interactions with vault share pricing
+  - Integer overflow/underflow in fee and reward math
+  - Denial-of-service on signal submission or auction bidding
+  - Token approval and permit2 edge cases
+  - Insurance pool solvency under extreme scenarios
+  - VotingEscrow lock manipulation and gauge gaming
+  - Slashing conditions correctness and griefing vectors
+
+out_of_scope:
+  - Frontend / PWA code
+  - Off-chain Python orchestrator and agents
+  - Telegram bot and mini-app
+  - Subgraph indexing logic
+  - Third-party library internals (OpenZeppelin, LayerZero)
+  - Deployment scripts and infrastructure
+  - Mock contracts under contracts/mocks/
+
+test_coverage_required: ">=85% line coverage via forge coverage"
+
+static_analysis:
+  - tool: Slither
+    required_findings: 0 high, 0 medium (acknowledged low acceptable)
+  - tool: Aderyn
+    required_findings: 0 high
+
+fuzz_testing:
+  - tool: Foundry fuzz
+    min_runs: 10000
+  - tool: Echidna
+    mode: assertion + property
+    corpus_days: 3
+
+invariant_tests:
+  - vault totalAssets >= sum of all share values
+  - insurance pool balance >= committed coverage
+  - veABNK total supply == sum of locked balances
+  - analyst stake >= minimum after any slashing event
+  - circuit breaker activates before drawdown exceeds threshold
+
+deliverable:
+  format: Cantina Spot Audit Report (PDF + on-chain attestation)
+  duration: 2 weeks
+  auditors: 2 senior + 1 junior
+  retest: 1 week post-fix verification

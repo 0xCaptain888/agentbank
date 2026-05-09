@@ -1,4 +1,4 @@
-import { Telegraf, Context } from "telegraf";
+import { Telegraf, Context, Markup } from "telegraf";
 import express from "express";
 import { config } from "./config";
 import { handleWallet } from "./handlers/wallet";
@@ -68,7 +68,19 @@ bot.command("start", async (ctx) => {
     "Get started by creating your wallet with /wallet",
   ].join("\n");
 
-  await ctx.reply(welcomeMessage);
+  // M30: Reply with Mini App launch button
+  await ctx.reply(welcomeMessage, {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: "Open AgentBank App",
+            web_app: { url: "https://miniapp.agentbank.xyz" },
+          },
+        ],
+      ],
+    },
+  });
 });
 
 bot.command("wallet", handleWallet);

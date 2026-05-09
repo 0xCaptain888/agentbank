@@ -7,6 +7,7 @@ Allocator Agent
 """
 
 import asyncio
+import numpy as np
 from agents.base_agent import BaseAgent
 from skills.yield_calc import YieldCalcSkill
 import config
@@ -21,10 +22,51 @@ class AllocatorAgent(BaseAgent):
         )
         self.yield_skill = YieldCalcSkill(chain=self.chain)
 
+    def select_best_signal_boltzmann(self, candidate_signals: list) -> dict:
+        """
+        M28 Boltzmann exploration for signal selection.
+        Uses softmax with temperature=0.3 over analyst weights to
+        probabilistically select the best signal, balancing exploitation
+        of high-weight analysts with exploration of newer ones.
+        """
+        temperature = 0.3
+
+        weights = []
+        for signal in candidate_signals:
+            analyst_id = signal.get("analyst_id")
+            # Get weight from registry; cold-start analysts get minimum weight of 1
+            weight = self.chain.get_analyst_weight(analyst_id) if analyst_id else 1
+            weight = max(weight, 1)  # min weight 1 for cold-start analysts
+            weights.append(weight)
+
+        weights = np.array(weights, dtype=np.float64)
+
+        # Apply softmax with temperature scaling
+        scaled = weights / temperature
+        shifted = scaled - np.max(scaled)  # numerical stability
+        exp_values = np.exp(shifted)
+        probabilities = exp_values / np.sum(exp_values)
+
+        # Sample one signal according to Boltzmann distribution
+        selected_index = np.random.choice(len(candidate_signals), p=probabilities)
+
+        self.logger.info(
+            f"Boltzmann selection | candidates={len(candidate_signals)} | "
+            f"selected_index={selected_index} | prob={probabilities[selected_index]:.4f}"
+        )
+
+        return candidate_signals[selected_index]
+
     async def run_cycle(self) -> None:
         self.logger.info("=== Allocator cycle started ===")
 
         try:
+            # 0. Select best signal via Boltzmann exploration (M28)
+            candidate_signals = await self.yield_skill.get_candidate_signals()
+            if candidate_signals:
+                selected_signal = self.select_best_signal_boltzmann(candidate_signals)
+                self.logger.info(f"Selected signal: {selected_signal.get('id', 'unknown')}")
+
             # 1. Calculate yield accumulated since last distribution
             yield_data = await self.yield_skill.calculate_pending_yield()
 
