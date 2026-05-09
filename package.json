@@ -1,0 +1,22 @@
+{
+  "name": "agentbank",
+  "version": "1.0.0",
+  "description": "Multi-agent autonomous treasury on Mantle — four AI agents collaboratively manage an on-chain vault",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:testnet": "hardhat run scripts/deploy_testnet.js --network mantle_sepolia",
+    "deploy:mainnet": "hardhat run scripts/deploy_mainnet.js --network mantle",
+    "verify": "hardhat run scripts/verify_contracts.js"
+  },
+  "keywords": ["mantle", "defi", "ai-agents", "erc4626", "erc8004", "autonomous-treasury"],
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.4.0"
+  }
+}
