@@ -1,15 +1,23 @@
 {
   "name": "agentbank",
-  "version": "1.0.0",
-  "description": "Multi-agent autonomous treasury on Mantle — four AI agents collaboratively manage an on-chain vault",
+  "version": "2.0.0",
+  "description": "Multi-agent autonomous treasury on Mantle — five AI agents with Byreal Skills CLI, ERC-8004, analyst marketplace, and verifiable LLM reasoning",
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
-    "deploy:testnet": "hardhat run scripts/deploy_testnet.js --network mantle_sepolia",
-    "deploy:mainnet": "hardhat run scripts/deploy_mainnet.js --network mantle",
-    "verify": "hardhat run scripts/verify_contracts.js"
+    "test:unit": "hardhat test test/unit/",
+    "test:integration": "hardhat test test/integration/",
+    "test:invariants": "hardhat test test/invariants/",
+    "test:fuzz": "hardhat test test/fuzz/",
+    "test:fork": "hardhat test test/fork/ --network hardhat",
+    "deploy:testnet": "hardhat run scripts/deploy_v2_testnet.js --network mantle_sepolia",
+    "deploy:mainnet": "hardhat run scripts/deploy_v2_mainnet.js --network mantle",
+    "seed": "hardhat run scripts/seed_initial_state.js",
+    "verify": "hardhat run scripts/verify_all.js",
+    "verify:reasoning": "hardhat run scripts/verify_reasoning.js",
+    "migrate": "hardhat run scripts/migrate_v1_to_v2.js"
   },
-  "keywords": ["mantle", "defi", "ai-agents", "erc4626", "erc8004", "autonomous-treasury"],
+  "keywords": ["mantle", "defi", "ai-agents", "erc4626", "erc8004", "autonomous-treasury", "byreal-skills", "multi-agent-economy"],
   "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",

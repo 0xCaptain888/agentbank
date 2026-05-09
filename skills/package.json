@@ -1,6 +1,6 @@
 {
   "name": "@agentbank/skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "AgentBank skill for AI agents on Mantle",
   "main": "dist/index.js",
   "bin": {
