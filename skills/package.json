@@ -1,0 +1,30 @@
+{
+  "name": "@agentbank/skills",
+  "version": "0.1.0",
+  "description": "AgentBank skill for AI agents on Mantle",
+  "main": "dist/index.js",
+  "bin": {
+    "agentbank-cli": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js"
+  },
+  "keywords": ["mantle", "defi", "agent", "byreal", "skills", "erc-8004", "claude-skill"],
+  "dependencies": {
+    "commander": "^11.0.0",
+    "ethers": "^6.10.0",
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/node": "^20.10.0"
+  },
+  "files": ["dist", "SKILL.md", "README.md"],
+  "byreal-skill": {
+    "version": "1.0",
+    "name": "agentbank",
+    "category": "defi-treasury",
+    "chain": "mantle"
+  }
+}

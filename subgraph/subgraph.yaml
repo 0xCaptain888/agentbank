@@ -1,0 +1,121 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: AgentBankVaultV2
+    network: mantle
+    source:
+      address: "0x0000000000000000000000000000000000000001"
+      abi: AgentBankVaultV2
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - VaultDeposit
+        - VaultWithdraw
+        - Operation
+      abis:
+        - name: AgentBankVaultV2
+          file: ./abis/AgentBankVaultV2.json
+      eventHandlers:
+        - event: Deposit(indexed address,indexed address,uint256,uint256)
+          handler: handleDeposit
+        - event: Withdraw(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleWithdraw
+        - event: OperationExecuted(indexed address,indexed address,bytes4,uint256,uint256,int256,bytes32,bytes32)
+          handler: handleOperationExecuted
+      file: ./src/vault.ts
+
+  - kind: ethereum
+    name: IdentityRegistry
+    network: mantle
+    source:
+      address: "0x0000000000000000000000000000000000000002"
+      abi: IdentityRegistry
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Agent
+      abis:
+        - name: IdentityRegistry
+          file: ./abis/IdentityRegistry.json
+      eventHandlers:
+        - event: AgentRegistered(indexed uint256,indexed address,string,string)
+          handler: handleAgentRegistered
+        - event: AgentUpdated(indexed uint256,string,bytes32)
+          handler: handleAgentUpdated
+        - event: AgentDeactivated(indexed uint256)
+          handler: handleAgentDeactivated
+      file: ./src/identity.ts
+
+  - kind: ethereum
+    name: ReputationRegistry
+    network: mantle
+    source:
+      address: "0x0000000000000000000000000000000000000003"
+      abi: ReputationRegistry
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReputationChange
+        - Agent
+      abis:
+        - name: ReputationRegistry
+          file: ./abis/ReputationRegistry.json
+      eventHandlers:
+        - event: FeedbackSubmitted(indexed uint256,indexed address,int256,bytes32)
+          handler: handleFeedbackSubmitted
+      file: ./src/reputation.ts
+
+  - kind: ethereum
+    name: SignalBoardV2
+    network: mantle
+    source:
+      address: "0x0000000000000000000000000000000000000004"
+      abi: SignalBoardV2
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Signal
+      abis:
+        - name: SignalBoardV2
+          file: ./abis/SignalBoardV2.json
+      eventHandlers:
+        - event: SignalPosted(indexed bytes32,indexed address,string,string,uint256,bytes32,uint256)
+          handler: handleSignalPosted
+        - event: SignalStatusUpdated(indexed bytes32,uint8,uint8,address,uint256)
+          handler: handleSignalStatusUpdated
+      file: ./src/signals.ts
+
+  - kind: ethereum
+    name: LLMReasoningRegistry
+    network: mantle
+    source:
+      address: "0x0000000000000000000000000000000000000005"
+      abi: LLMReasoningRegistry
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReasoningEntry
+      abis:
+        - name: LLMReasoningRegistry
+          file: ./abis/LLMReasoningRegistry.json
+      eventHandlers:
+        - event: ReasoningRecorded(indexed bytes32,indexed bytes32,indexed address,string,bytes32,bytes32,string)
+          handler: handleReasoningRecorded
+      file: ./src/reasoning.ts

@@ -1,0 +1,70 @@
+type Agent @entity {
+  id: ID!
+  wallet: Bytes!
+  name: String!
+  agentType: String!
+  reputationScore: BigInt!
+  totalActions: BigInt!
+  successfulActions: BigInt!
+  active: Boolean!
+  mintedAt: BigInt!
+}
+
+type Signal @entity {
+  id: ID!
+  from: Bytes!
+  signalType: String!
+  targetProtocol: String!
+  tokenIn: Bytes!
+  tokenOut: Bytes!
+  amountIn: BigInt!
+  minAmountOut: BigInt!
+  confidence: BigInt!
+  reasoning: String!
+  status: String!
+  createdAt: BigInt!
+  executedAt: BigInt
+}
+
+type VaultDeposit @entity {
+  id: ID!
+  user: Bytes!
+  assets: BigInt!
+  shares: BigInt!
+  timestamp: BigInt!
+}
+
+type VaultWithdraw @entity {
+  id: ID!
+  user: Bytes!
+  assets: BigInt!
+  shares: BigInt!
+  timestamp: BigInt!
+}
+
+type Operation @entity {
+  id: ID!
+  agent: Bytes!
+  target: Bytes!
+  value: BigInt!
+  success: Boolean!
+  timestamp: BigInt!
+}
+
+type ReputationChange @entity {
+  id: ID!
+  agent: Bytes!
+  delta: BigInt!
+  newScore: BigInt!
+  reason: String!
+  timestamp: BigInt!
+}
+
+type ReasoningEntry @entity {
+  id: ID!
+  agent: Bytes!
+  promptHash: Bytes!
+  responseHash: Bytes!
+  chainHash: Bytes!
+  timestamp: BigInt!
+}
