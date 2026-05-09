@@ -51,6 +51,45 @@ DEEPSEEK_MODEL         = "deepseek-chat"   # DeepSeek V3
 DEEPSEEK_MAX_TOKENS    = 1000
 DEEPSEEK_TEMPERATURE   = 0.1              # Low temp for deterministic outputs
 
+# ─── V3: Decentralized Inference (M19) ───────────────────────────────────────
+TOGETHER_API_KEY       = os.getenv("TOGETHER_API_KEY")       # Llama 3
+DASHSCOPE_API_KEY      = os.getenv("DASHSCOPE_API_KEY")      # Qwen 2.5
+ALLORA_TOPIC_ID        = int(os.getenv("ALLORA_TOPIC_ID", "1"))
+ALLORA_WORKER_KEY      = os.getenv("ALLORA_WORKER_KEY")
+
+# ─── V3: TEE Attestation (M20) ──────────────────────────────────────────────
+PHALA_TEE_URL          = os.getenv("PHALA_TEE_URL", "https://tee.agentbank.xyz")
+TEE_VERIFIER_ADDRESS   = os.getenv("TEE_VERIFIER_ADDRESS", "")
+
+# ─── V3: Token (M21) ────────────────────────────────────────────────────────
+ABNK_TOKEN_ADDRESS     = os.getenv("ABNK_TOKEN_ADDRESS", "")
+VOTING_ESCROW_ADDRESS  = os.getenv("VOTING_ESCROW_ADDRESS", "")
+FEE_DISTRIBUTOR_ADDRESS = os.getenv("FEE_DISTRIBUTOR_ADDRESS", "")
+
+# ─── V3: Intent Router (M24) ────────────────────────────────────────────────
+INTENT_ROUTER_ADDRESS  = os.getenv("INTENT_ROUTER_ADDRESS", "")
+SOLVER_REGISTRY_ADDRESS = os.getenv("SOLVER_REGISTRY_ADDRESS", "")
+
+# ─── V3: Cross-Chain (M27) ──────────────────────────────────────────────────
+AGENTBANK_OFT_ADDRESS  = os.getenv("AGENTBANK_OFT_ADDRESS", "")
+CROSS_CHAIN_ENTRYPOINT = os.getenv("CROSS_CHAIN_ENTRYPOINT", "")
+
+# ─── V3: Account Abstraction (M25) ──────────────────────────────────────────
+PIMLICO_API_KEY        = os.getenv("PIMLICO_API_KEY")
+AA_FACTORY_ADDRESS     = os.getenv("AA_FACTORY_ADDRESS", "")
+
+# ─── V3: Signal NFT (M26) ───────────────────────────────────────────────────
+SIGNAL_NFT_ADDRESS     = os.getenv("SIGNAL_NFT_ADDRESS", "")
+AUCTION_HOUSE_ADDRESS  = os.getenv("AUCTION_HOUSE_ADDRESS", "")
+
+# ─── V3: Mechanism Hardening (M28) ──────────────────────────────────────────
+ANTI_SYBIL_ADDRESS     = os.getenv("ANTI_SYBIL_ADDRESS", "")
+COMMIT_REVEAL_ADDRESS  = os.getenv("COMMIT_REVEAL_ADDRESS", "")
+
+# ─── V3: LLM Reasoning Registry ─────────────────────────────────────────────
+LLM_REGISTRY_ADDRESS   = os.getenv("LLM_REGISTRY_ADDRESS", "")
+LLM_REGISTRY_ABI       = _load_abi("LLMReasoningRegistry")
+
 # ─── Risk Parameters ──────────────────────────────────────────────────────────
 MAX_OPERATION_BPS      = 1000   # 10% of vault per operation
 MIN_SIGNAL_CONFIDENCE  = 70     # Analyst must have >= 70% confidence

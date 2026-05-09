@@ -1,9 +1,9 @@
 """
-Analyst Agent
+Analyst Agent (V3)
 - Runs every 60 minutes
 - Fetches DeFi pool data from Merchant Moe and Agni Finance on Mantle
-- Calls DeepSeek V3 to analyze and decide optimal strategy
-- Posts strategy signal to SignalBoard contract on-chain
+- Routes inference through decentralized sources (Allora + OpenGradient + TEE + local)
+- Posts strategy signal to SignalBoard contract on-chain with attestation
 """
 
 import asyncio
@@ -11,6 +11,9 @@ from datetime import datetime
 from agents.base_agent import BaseAgent
 from skills.pool_analysis import PoolAnalysisSkill
 from core.signal_bus import SignalBus
+from core.decentral_inference import DecentralInferenceRouter
+from core.tee_attestation import TEEClient
+from core.llm_ensemble import EnsembleClient
 import config
 
 
@@ -52,6 +55,24 @@ class AnalystAgent(BaseAgent):
         self.pool_skill = PoolAnalysisSkill(chain=self.chain)
         self.signal_bus = SignalBus(chain=self.chain)
 
+        # V3: Decentralized inference router
+        self.decentral_router = None
+        try:
+            self.decentral_router = DecentralInferenceRouter(
+                allora_client=None,       # Initialized from chain config
+                opengradient_client=None,  # Initialized from chain config
+                tee_client=TEEClient(
+                    phala_url=config.PHALA_TEE_URL,
+                    chain=self.chain,
+                    verifier_address=config.TEE_VERIFIER_ADDRESS,
+                ),
+                local_llm=self.llm,
+                chain=self.chain,
+            )
+            self.logger.info("V3 decentralized inference router initialized")
+        except Exception as e:
+            self.logger.warning(f"V3 decentral inference unavailable, falling back to local: {e}")
+
     async def run_cycle(self) -> None:
         self.logger.info("=== Analyst cycle started ===")
 
@@ -63,26 +84,46 @@ class AnalystAgent(BaseAgent):
             # 2. Format data for LLM
             prompt = self._build_prompt(pool_data)
 
-            # 3. Call DeepSeek V3
+            # 3. V3: Route via decentralized inference if available
+            inference_meta = {}
+            if self.decentral_router:
+                try:
+                    market_query = {
+                        "allora_topic": config.ALLORA_TOPIC_ID,
+                        "features": {"pools": len(pool_data)},
+                        "prompt": prompt,
+                    }
+                    inference = await self.decentral_router.get_signal(market_query)
+                    inference_meta = {
+                        "sources": inference.get("sources_used", []),
+                        "attestation_hash": inference.get("attestations", {}),
+                        "directional_score": inference.get("directional_score", 0),
+                    }
+                    self.logger.info(f"Decentralized inference: sources={inference_meta['sources']}")
+                except Exception as e:
+                    self.logger.warning(f"Decentral inference failed, using local: {e}")
+
+            # 4. Call DeepSeek V3 (local LLM always runs as primary signal generator)
             response = await self.llm.complete(
                 system=ANALYST_SYSTEM_PROMPT,
                 user=prompt
             )
 
-            # 4. Parse signal
+            # 5. Parse signal
             signal = self.llm.parse_json(response)
+            signal.update(inference_meta)  # Attach V3 attestation metadata
 
             self.logger.info(
                 f"Signal generated | type={signal['signal_type']} | "
                 f"confidence={signal['confidence']} | protocol={signal['target_protocol']}"
             )
 
-            # 5. Only post if confidence >= 70 and not hold
+            # 6. Only post if confidence >= 70 and not hold
             if signal["confidence"] < 70 or signal["signal_type"] == "hold":
                 self.logger.info("Signal confidence too low or hold signal — skipping post")
                 return
 
-            # 6. Post to SignalBoard on-chain
+            # 7. Post to SignalBoard on-chain
             signal_id = await self.signal_bus.post_signal(
                 signal_type=signal["signal_type"],
                 target_protocol=signal["target_protocol"],
