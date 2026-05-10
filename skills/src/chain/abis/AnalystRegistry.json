@@ -1,0 +1,9 @@
+[
+  {"inputs":[{"name":"domain","type":"string"},{"name":"metadataHash","type":"bytes32"}],"name":"register","outputs":[],"stateMutability":"payable","type":"function"},
+  {"inputs":[],"name":"getActiveAnalysts","outputs":[{"name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},
+  {"inputs":[{"name":"agentId","type":"uint256"}],"name":"analysts","outputs":[{"components":[{"name":"agentId","type":"uint256"},{"name":"stakedMNT","type":"uint256"},{"name":"unstakeRequestedAt","type":"uint256"},{"name":"totalSignalsChosen","type":"uint256"},{"name":"totalSignalsExecuted","type":"uint256"},{"name":"totalPnLAttributed","type":"int256"},{"name":"unclaimedRewards","type":"uint256"},{"name":"active","type":"bool"}],"name":"","type":"tuple"}],"stateMutability":"view","type":"function"},
+  {"inputs":[{"name":"agentId","type":"uint256"}],"name":"weight","outputs":[{"name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+  {"inputs":[],"name":"claimRewards","outputs":[],"stateMutability":"nonpayable","type":"function"},
+  {"inputs":[],"name":"requestUnstake","outputs":[],"stateMutability":"nonpayable","type":"function"},
+  {"inputs":[],"name":"executeUnstake","outputs":[],"stateMutability":"nonpayable","type":"function"}
+]

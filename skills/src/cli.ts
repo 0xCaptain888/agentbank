@@ -9,6 +9,7 @@ import { catalogCommands } from './commands/catalog';
 import { skillCommand } from './commands/skill';
 import { walletCommands } from './commands/wallet';
 import { riskCommands } from './commands/risk';
+import { strategyCommands } from './commands/strategy';
 
 const program = new Command();
 
@@ -28,6 +29,7 @@ catalogCommands(program);
 skillCommand(program);
 walletCommands(program);
 riskCommands(program);
+strategyCommands(program);
 
 program.parseAsync(process.argv).catch(err => {
   if (program.opts().output === 'json') {

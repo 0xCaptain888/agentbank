@@ -1,0 +1,6 @@
+[
+  {"inputs":[{"name":"token","type":"address"}],"name":"checkAnomaly","outputs":[{"name":"anomaly","type":"bool"},{"name":"spot","type":"int64"},{"name":"twap1h","type":"int64"},{"name":"deviationBps","type":"uint256"}],"stateMutability":"view","type":"function"},
+  {"inputs":[{"name":"token","type":"address"}],"name":"snapshot","outputs":[],"stateMutability":"nonpayable","type":"function"},
+  {"inputs":[{"name":"token","type":"address"},{"name":"priceId","type":"bytes32"}],"name":"setPriceId","outputs":[],"stateMutability":"nonpayable","type":"function"},
+  {"inputs":[{"name":"token","type":"address"}],"name":"priceIds","outputs":[{"name":"","type":"bytes32"}],"stateMutability":"view","type":"function"}
+]

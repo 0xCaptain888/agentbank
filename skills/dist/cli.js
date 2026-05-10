@@ -10,6 +10,7 @@ const tier_1 = require("./commands/tier");
 const catalog_1 = require("./commands/catalog");
 const wallet_1 = require("./commands/wallet");
 const risk_1 = require("./commands/risk");
+const strategy_1 = require("./commands/strategy");
 const program = new commander_1.Command();
 program
     .name('agentbank-cli')
@@ -25,6 +26,7 @@ program
 (0, catalog_1.catalogCommands)(program);
 (0, wallet_1.walletCommands)(program);
 (0, risk_1.riskCommands)(program);
+(0, strategy_1.strategyCommands)(program);
 program.command('skill').description('Display full skill documentation')
     .action(() => {
     const fs = require('fs');

@@ -27,6 +27,22 @@ const CATALOG = {
       { id: 'agents.validate', params: ['target', 'feedback', 'reason'], read: false },
     ],
   },
+  analyst: {
+    description: 'Analyst marketplace operations',
+    capabilities: [
+      { id: 'analyst.register', params: ['stake'], read: false },
+      { id: 'analyst.earnings', params: [], read: true },
+      { id: 'analyst.withdraw-stake', params: [], read: false },
+      { id: 'analyst.list', params: [], read: true },
+    ],
+  },
+  strategies: {
+    description: 'Strategy discovery and analysis',
+    capabilities: [
+      { id: 'strategies.list', params: [], read: true },
+      { id: 'strategies.analyze', params: ['id'], read: true },
+    ],
+  },
   tier: {
     description: 'Multi-tier vault operations',
     capabilities: [

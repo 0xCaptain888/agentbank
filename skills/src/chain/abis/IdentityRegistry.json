@@ -1,0 +1,6 @@
+[
+  {"inputs":[{"name":"agentAddress","type":"address"},{"name":"domain","type":"string"},{"name":"agentType","type":"string"},{"name":"metadataHash","type":"bytes32"}],"name":"registerAgent","outputs":[{"name":"id","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},
+  {"inputs":[{"name":"id","type":"uint256"}],"name":"getAgent","outputs":[{"components":[{"name":"id","type":"uint256"},{"name":"agentAddress","type":"address"},{"name":"domain","type":"string"},{"name":"agentType","type":"string"},{"name":"metadataHash","type":"bytes32"},{"name":"registeredAt","type":"uint256"},{"name":"active","type":"bool"}],"name":"","type":"tuple"}],"stateMutability":"view","type":"function"},
+  {"inputs":[{"name":"a","type":"address"}],"name":"getAgentByAddress","outputs":[{"components":[{"name":"id","type":"uint256"},{"name":"agentAddress","type":"address"},{"name":"domain","type":"string"},{"name":"agentType","type":"string"},{"name":"metadataHash","type":"bytes32"},{"name":"registeredAt","type":"uint256"},{"name":"active","type":"bool"}],"name":"","type":"tuple"}],"stateMutability":"view","type":"function"},
+  {"inputs":[{"name":"a","type":"address"}],"name":"agentByAddress","outputs":[{"name":"","type":"uint256"}],"stateMutability":"view","type":"function"}
+]
