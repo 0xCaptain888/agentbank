@@ -2,6 +2,7 @@
 pragma solidity ^0.8.24;
 
 import "@layerzerolabs/oapp-evm/contracts/oapp/OApp.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/interfaces/IERC4626.sol";
@@ -31,7 +32,7 @@ contract CrossChainEntrypoint is OApp {
         address _delegate,
         address _vault,
         address _oftToken
-    ) OApp(_endpoint, _delegate) {
+    ) OApp(_endpoint, _delegate) Ownable(_delegate) {
         vault = IERC4626(_vault);
         asset = IERC20(IERC4626(_vault).asset());
         oftToken = _oftToken;

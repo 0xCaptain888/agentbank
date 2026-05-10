@@ -3,12 +3,24 @@ require("dotenv").config();
 
 module.exports = {
   solidity: {
-    version: "0.8.27",
-    settings: {
-      optimizer: { enabled: true, runs: 200 },
-      evmVersion: "cancun",
-      viaIR: true
-    }
+    compilers: [
+      {
+        version: "0.8.27",
+        settings: {
+          optimizer: { enabled: true, runs: 200 },
+          evmVersion: "cancun",
+          viaIR: true
+        }
+      },
+      {
+        version: "0.8.28",
+        settings: {
+          optimizer: { enabled: true, runs: 200 },
+          evmVersion: "cancun",
+          viaIR: true
+        }
+      }
+    ]
   },
   networks: {
     mantle_sepolia: {
@@ -19,7 +31,13 @@ module.exports = {
     mantle: {
       url: "https://rpc.mantle.xyz",
       chainId: 5000,
-      accounts: process.env.OWNER_PRIVATE_KEY ? [process.env.OWNER_PRIVATE_KEY] : []
+      accounts: [
+        process.env.OWNER_PRIVATE_KEY,
+        process.env.ANALYST_PRIVATE_KEY,
+        process.env.EXECUTOR_PRIVATE_KEY,
+        process.env.GUARD_PRIVATE_KEY,
+        process.env.ALLOCATOR_PRIVATE_KEY
+      ].filter(Boolean)
     }
   },
   etherscan: {

@@ -83,8 +83,12 @@ async function main() {
 
   // 5. Deploy AgentBankVaultV2
   console.log("[5/6] Deploying AgentBankVaultV2...");
+  const executorAddress = process.env.EXECUTOR_ADDRESS;
+  const guardAddress = process.env.GUARD_ADDRESS;
+  const allocatorAddress = process.env.ALLOCATOR_ADDRESS;
+  const timelockAddress = owner.address; // owner acts as timelock for now
   const AgentBankVaultV2 = await ethers.getContractFactory("AgentBankVaultV2");
-  const vault = await AgentBankVaultV2.deploy(usdcAddress);
+  const vault = await AgentBankVaultV2.deploy(usdcAddress, executorAddress, guardAddress, allocatorAddress, timelockAddress);
   await vault.waitForDeployment();
   deployed.AgentBankVaultV2 = await vault.getAddress();
   txHashes.AgentBankVaultV2 = vault.deploymentTransaction().hash;
@@ -92,10 +96,6 @@ async function main() {
 
   // 6. Wire up permissions with dedicated agent wallets
   console.log("[6/6] Wiring permissions...");
-
-  const executorAddress = process.env.EXECUTOR_ADDRESS;
-  const guardAddress = process.env.GUARD_ADDRESS;
-  const allocatorAddress = process.env.ALLOCATOR_ADDRESS;
 
   if (!executorAddress || !guardAddress || !allocatorAddress) {
     console.log("  WARNING: Agent addresses not set. Skipping role grants.");

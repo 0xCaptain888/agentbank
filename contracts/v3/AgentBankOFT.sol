@@ -2,6 +2,7 @@
 pragma solidity ^0.8.24;
 
 import "@layerzerolabs/oft-evm/contracts/OFT.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 /// @title AgentBankOFT
 /// @notice M27 LayerZero V2 OFT for cross-chain ABV2 vault shares
@@ -25,7 +26,7 @@ contract AgentBankOFT is OFT {
         address _delegate,
         address _canonicalVault,
         bool _isCanonical
-    ) OFT(_name, _symbol, _lzEndpoint, _delegate) {
+    ) OFT(_name, _symbol, _lzEndpoint, _delegate) Ownable(_delegate) {
         canonicalVault = _canonicalVault;
         isCanonical = _isCanonical;
     }

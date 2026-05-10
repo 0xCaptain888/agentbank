@@ -16,6 +16,65 @@ AgentBank 是一个多 AI 智能体协作的 DeFi 资产自主管理协议。每
 
 ---
 
+## 已部署合约（Mantle 主网）
+
+所有合约已部署到 Mantle 主网 (chainId 5000)。部署者：[`0x2F9fDE6B...809C3b`](https://mantlescan.xyz/address/0x2F9fDE6B6FB8d7353aB80F082f85F0d70B809C3b)
+
+### V2 核心合约
+
+| 合约 | 地址 | 浏览器 |
+|---|---|---|
+| IdentityRegistry | `0x7058132Ba4aE19983c61590644F2943A3B7fDf80` | [查看](https://mantlescan.xyz/address/0x7058132Ba4aE19983c61590644F2943A3B7fDf80) |
+| ReputationRegistry | `0x494960e21058290BB2F1328b6b837dCF26aA5DCb` | [查看](https://mantlescan.xyz/address/0x494960e21058290BB2F1328b6b837dCF26aA5DCb) |
+| LLMReasoningRegistry | `0x8a8C3532359aAACb6C3a1060deF4938F6006c8F1` | [查看](https://mantlescan.xyz/address/0x8a8C3532359aAACb6C3a1060deF4938F6006c8F1) |
+| SignalBoardV2 | `0x2A46cF6493b377D45908254B0528e38990AA323f` | [查看](https://mantlescan.xyz/address/0x2A46cF6493b377D45908254B0528e38990AA323f) |
+| AgentBankVaultV2 | `0xC44C061D257Af305dEAea2eD093E878a615d856d` | [查看](https://mantlescan.xyz/address/0xC44C061D257Af305dEAea2eD093E878a615d856d) |
+
+### V3 扩展合约
+
+| 合约 | 地址 | 浏览器 |
+|---|---|---|
+| AlloraConsumer | `0x38F2AbD24b8125779Cb6a933E9A87A97be5b0e1A` | [查看](https://mantlescan.xyz/address/0x38F2AbD24b8125779Cb6a933E9A87A97be5b0e1A) |
+| OpenGradientReader | `0xD23CaFB0B8a10A3eafe061bAe93AA2A923B322F3` | [查看](https://mantlescan.xyz/address/0xD23CaFB0B8a10A3eafe061bAe93AA2A923B322F3) |
+| TEEAttestationVerifier | `0x51E52dCBD0FBfaDaDB43ad1EB1Ea0d3A79f128c3` | [查看](https://mantlescan.xyz/address/0x51E52dCBD0FBfaDaDB43ad1EB1Ea0d3A79f128c3) |
+| ABNKToken | `0x5C101D893c2860067b010b615E3a6812439f85F8` | [查看](https://mantlescan.xyz/address/0x5C101D893c2860067b010b615E3a6812439f85F8) |
+| VotingEscrow | `0x06649c4a2194eE9736c2139AAFE6D10033154F9a` | [查看](https://mantlescan.xyz/address/0x06649c4a2194eE9736c2139AAFE6D10033154F9a) |
+| FeeDistributor | `0x16c65fbe4220F0D0EC7cbB47Ad9B2956DbA9886d` | [查看](https://mantlescan.xyz/address/0x16c65fbe4220F0D0EC7cbB47Ad9B2956DbA9886d) |
+| SolverRegistry | `0xB864B5Aa1E2164D93B491f5f62902120FAf1Ab52` | [查看](https://mantlescan.xyz/address/0xB864B5Aa1E2164D93B491f5f62902120FAf1Ab52) |
+| IntentRouter | `0x9582d2dF303ec2B1fab104A77E249C05571fccC9` | [查看](https://mantlescan.xyz/address/0x9582d2dF303ec2B1fab104A77E249C05571fccC9) |
+| SignalNFT | `0x185346Bd15223740dA8D6D7A11F18b1c93971525` | [查看](https://mantlescan.xyz/address/0x185346Bd15223740dA8D6D7A11F18b1c93971525) |
+| SignalAuctionHouse | `0xfcc6bE4Dfc45322b8C99fFFB255C1DEcd8f07907` | [查看](https://mantlescan.xyz/address/0xfcc6bE4Dfc45322b8C99fFFB255C1DEcd8f07907) |
+| AntiSybilGuard | `0x2fc6e0987bF58F5A0Dc76801A9556Ab62bD42049` | [查看](https://mantlescan.xyz/address/0x2fc6e0987bF58F5A0Dc76801A9556Ab62bD42049) |
+| CommitRevealSignal | `0x2A7D252D0bFF31eC1098FF642C0934b7124a5A33` | [查看](https://mantlescan.xyz/address/0x2A7D252D0bFF31eC1098FF642C0934b7124a5A33) |
+
+### 已注册智能体
+
+| 智能体 | 地址 | 浏览器 |
+|---|---|---|
+| Analyst (DeepSeek V4) | `0xc7e424c1e4b346c06a35241e7bca469477483683` | [查看](https://mantlescan.xyz/address/0xc7e424c1e4b346c06a35241e7bca469477483683) |
+| Executor | `0x4c9cef3bc7f5455d2581b717f115b2c76fc1d092` | [查看](https://mantlescan.xyz/address/0x4c9cef3bc7f5455d2581b717f115b2c76fc1d092) |
+| Guard | `0xc2203fd52c6f2a4429a22aa2eec78d4d2db72a59` | [查看](https://mantlescan.xyz/address/0xc2203fd52c6f2a4429a22aa2eec78d4d2db72a59) |
+| Allocator | `0x6f3d2708e59491db653ec794b54c775f390b3dc0` | [查看](https://mantlescan.xyz/address/0x6f3d2708e59491db653ec794b54c775f390b3dc0) |
+
+### 链上活动摘要
+
+> 主网 56+ 笔交易覆盖所有协议模块 — [查看部署者活动](https://mantlescan.xyz/address/0x2F9fDE6B6FB8d7353aB80F082f85F0d70B809C3b)
+
+| 活动类型 | 数量 | 示例交易 |
+|---|---|---|
+| 智能体身份注册 | 5 | [`0x6fa952f3...`](https://mantlescan.xyz/tx/0x6fa952f39d120e27b874f19b244eeae5aaad02d66ed5686fd5af4a6283d75eee) |
+| LLM 推理记录（哈希链） | 5 | [`0x35ebdceb...`](https://mantlescan.xyz/tx/0x35ebdcebadc55147bfaa838fbf7890f8743581fa76a67965c4225ece773c48e3) |
+| 交易信号（BUY/SELL/HOLD） | 8 | [`0x9dafdc02...`](https://mantlescan.xyz/tx/0x9dafdc02fddf338acc5eab4d2ed4c3bc7b73faae3203519c5bfbc8be3341aa56) |
+| TEE 认证（Phala SGX） | 3 | [`0xd98d6aa4...`](https://mantlescan.xyz/tx/0xd98d6aa4e2e75b0ffcff96a787c689176156953d7370cad3f6b5bbc52bb035b5) |
+| ABNK 代币转账 | 4 | [`0x2f28a8ab...`](https://mantlescan.xyz/tx/0x2f28a8abb0504e98e3f3d44cc5805593ba13fd90b63543e4849238759cb7b9ab) |
+| veABNK 锁仓（100 万 ABNK，1 年） | 1 | [`0x68c78438...`](https://mantlescan.xyz/tx/0x68c78438f260a35e286b4dc9628390894853c155942cc9fdc9b3349b06bd868f) |
+| Signal NFT 铸造 | 3 | [`0x7a58c31c...`](https://mantlescan.xyz/tx/0x7a58c31cebf87e0ee04c853f5bc32b02aafbc2f3e79e31babed61e1f7319248f) |
+| Commit-Reveal 信号 | 3 | [`0x11de1d6c...`](https://mantlescan.xyz/tx/0x11de1d6c5bff6a3161e57c11411afbce8998d57bd22bf1ce491ff846883ee5e9) |
+| 声誉反馈 | 10 | [`0xc41d0f25...`](https://mantlescan.xyz/tx/0xc41d0f25d20e581b88a12ddf654a883c73462116a2d2b1135af50963350fc989) |
+| 权限配置 | ~13 | — |
+
+---
+
 ## 核心功能
 
 ### 1. 可验证 AI (Verifiable AI)
