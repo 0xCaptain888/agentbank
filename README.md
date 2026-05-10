@@ -1,5 +1,7 @@
 # AgentBank V3
 
+> 🌐 **Demo**: [https://gl27ek46.mule.page/](https://gl27ek46.mule.page/) &nbsp;|&nbsp; 𝕏 **Twitter**: [https://x.com/0xCaptain888](https://x.com/0xCaptain888) &nbsp;|&nbsp; 📖 **Docs**: [https://0xcaptain.mintlify.app/](https://0xcaptain.mintlify.app/)
+
 > **Mantle Turing Test Hackathon 2026 · Agentic Wallets & Economy · $8,500 First Prize Bid**
 
 The verifiable autonomous treasury. A multi-agent DeFi protocol on Mantle with decentralized AI inference (Allora + OpenGradient + TEE), hardware-attested LLM reasoning, intent-based solver auctions, cross-chain deposits via LayerZero V2, and a ve-tokenomics governance layer.
