@@ -4,7 +4,17 @@
 
 > **Mantle Turing Test Hackathon 2026 · Agentic Wallets & Economy · $8,500 First Prize Bid**
 
-The verifiable autonomous treasury. A multi-agent DeFi protocol on Mantle with decentralized AI inference (Allora + OpenGradient + TEE), hardware-attested LLM reasoning, intent-based solver auctions, cross-chain deposits via LayerZero V2, and a ve-tokenomics governance layer.
+**AgentBank V3** is a production-ready autonomous DeFi treasury deployed on **Mantle Mainnet**, powered by **5 AI agents** that collaboratively analyze markets, execute trades, and manage yield — all with cryptographically verifiable reasoning.
+
+### What It Does
+
+- **5 Autonomous AI Agents** (Analyst × 3, Executor, Guard, Allocator, Circuit Breaker) run on schedule, each with a dedicated wallet, posting on-chain signals and executing DeFi operations across Merchant Moe, Agni Finance, and Fluxion.
+- **Verifiable AI Inference** — Every LLM decision is attested via Intel SGX (Phala Cloud TEE), with reasoning hash-chains recorded on-chain. Decentralized inference routes through Allora Network, OpenGradient, and local multi-model ensemble (DeepSeek V3 + Llama 3 + Qwen 2.5).
+- **Intent-Based Solver Auctions** — Users post yield intents ("I want 8% APY for 30 days"), and registered solvers compete in 30-minute Dutch auctions for best execution.
+- **Multi-Tier ERC-4626 Vaults** — Conservative (4-6%), Balanced (8-12%), and Aggressive (15-25%) strategies with real yield from DEX LPs, USDY (Ondo RWA), and mETH staking.
+- **Cross-Chain via LayerZero V2** — Deposit from Ethereum, Arbitrum, BNB Chain, or Base. Vault shares are omnichain OFT tokens.
+- **$ABNK ve-Tokenomics** — Curve-style vote-escrow governance with fee capture (80% to veABNK holders), analyst staking, and Signal NFT minting.
+- **56+ mainnet transactions**, 40+ smart contracts (1,941 lines of Solidity), full Foundry fuzz/invariant test suite.
 
 [![Deployed on Mantle](https://img.shields.io/badge/Deployed-Mantle%20Mainnet-00D395)](https://explorer.mantle.xyz)
 [![Byreal Skills](https://img.shields.io/badge/Byreal-Skills%20Compatible-blue)](https://www.byreal.io)
