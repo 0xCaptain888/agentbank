@@ -58,20 +58,24 @@ AgentBank는 여러 AI 에이전트가 협력하여 자율적으로 DeFi 자산�
 
 ### 온체인 활동 요약
 
-> 메인넷 56+ 트랜잭션, 모든 프로토콜 모듈 포함 — [배포자 활동 보기](https://mantlescan.xyz/address/0x2F9fDE6B6FB8d7353aB80F082f85F0d70B809C3b)
+> 메인넷 138+ 트랜잭션, 모든 프로토콜 모듈 포함 — [배포자 활동 보기](https://mantlescan.xyz/address/0x2F9fDE6B6FB8d7353aB80F082f85F0d70B809C3b) | [Analyst 활동 보기](https://mantlescan.xyz/address/0xc7e424c1e4b346c06a35241e7bca469477483683)
 
 | 활동 유형 | 수량 | 샘플 Tx |
 |---|---|---|
 | 에이전트 아이덴티티 등록 | 5 | [`0x6fa952f3...`](https://mantlescan.xyz/tx/0x6fa952f39d120e27b874f19b244eeae5aaad02d66ed5686fd5af4a6283d75eee) |
-| LLM 추론 기록 (해시 체인) | 5 | [`0x35ebdceb...`](https://mantlescan.xyz/tx/0x35ebdcebadc55147bfaa838fbf7890f8743581fa76a67965c4225ece773c48e3) |
-| 트레이딩 시그널 (BUY/SELL/HOLD) | 8 | [`0x9dafdc02...`](https://mantlescan.xyz/tx/0x9dafdc02fddf338acc5eab4d2ed4c3bc7b73faae3203519c5bfbc8be3341aa56) |
-| TEE 증명 (Phala SGX) | 3 | [`0xd98d6aa4...`](https://mantlescan.xyz/tx/0xd98d6aa4e2e75b0ffcff96a787c689176156953d7370cad3f6b5bbc52bb035b5) |
-| ABNK 토큰 전송 | 4 | [`0x2f28a8ab...`](https://mantlescan.xyz/tx/0x2f28a8abb0504e98e3f3d44cc5805593ba13fd90b63543e4849238759cb7b9ab) |
+| LLM 추론 기록 (해시 체인) | 25 | [`0xefecf148...`](https://mantlescan.xyz/tx/0xefecf148924a6cbc452e67852ca99abd73459b920e97c3edae821282cb972142) |
+| 트레이딩 시그널 (BUY/SELL/HOLD) | 25 | [`0xfe8fa329...`](https://mantlescan.xyz/tx/0xfe8fa329ccd6fcd3e9fe45bbdfb255ad180b6e1adc1f793c2cc1fcb1ae553871) |
+| TEE 증명 (Phala SGX) | 10 | [`0x865f6505...`](https://mantlescan.xyz/tx/0x865f650569db0f38d3b332c1e21ece1d865de8f61fa8539fba5b5f3988cdff4f) |
+| ABNK 토큰 운영 (전송/민팅/승인) | 15 | [`0xf3a96a5e...`](https://mantlescan.xyz/tx/0xf3a96a5e55184de3e518a4cf844335062f6e0a0277c1bf081d003c739453fcdf) |
 | veABNK 락업 (100만 ABNK, 1년) | 1 | [`0x68c78438...`](https://mantlescan.xyz/tx/0x68c78438f260a35e286b4dc9628390894853c155942cc9fdc9b3349b06bd868f) |
-| Signal NFT 민팅 | 3 | [`0x7a58c31c...`](https://mantlescan.xyz/tx/0x7a58c31cebf87e0ee04c853f5bc32b02aafbc2f3e79e31babed61e1f7319248f) |
-| Commit-Reveal 시그널 | 3 | [`0x11de1d6c...`](https://mantlescan.xyz/tx/0x11de1d6c5bff6a3161e57c11411afbce8998d57bd22bf1ce491ff846883ee5e9) |
-| 평판 피드백 | 10 | [`0xc41d0f25...`](https://mantlescan.xyz/tx/0xc41d0f25d20e581b88a12ddf654a883c73462116a2d2b1135af50963350fc989) |
+| Signal NFT 민팅 | 10 | [`0xd4e1224a...`](https://mantlescan.xyz/tx/0xd4e1224ac6e52d886f0845fad36f612fa1a26c46197f502efd571fb9b9ce8f10) |
+| Commit-Reveal 시그널 | 11 | [`0xa6606db8...`](https://mantlescan.xyz/tx/0xa6606db82b24576779e3f52985e22069a5673936d92f64a933bdde90254ee33f) |
+| 평판 피드백 | 25 | [`0x4a73a03d...`](https://mantlescan.xyz/tx/0x4a73a03dfc01ac99eb7570bea81a39661c3685e1d9bfd970f8720fba5b12d877) |
 | 권한 설정 | ~13 | — |
+
+**사용된 LLM 모델**: DeepSeek V4, Llama 3 70B, Qwen 2.5 72B (멀티 모델 앙상블)
+**시그널 소스**: 배포자 (관리자) + Analyst 에이전트 (독립 지갑)
+**추론 체인**: IPFS 저장 URI가 포함된 해시 연결 기록
 
 ---
 

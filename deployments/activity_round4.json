@@ -1,0 +1,356 @@
+{
+  "txCount": 82,
+  "timestamp": "2026-05-10T03:02:16.497Z",
+  "categories": {
+    "Reasoning": [
+      {
+        "detail": "deepseek-v4: BUY. Ascending triangle forming, breakou...",
+        "hash": "0xefecf148924a6cbc452e67852ca99abd73459b920e97c3edae821282cb972142"
+      },
+      {
+        "detail": "deepseek-v4: BULLISH. Exchange reserves depleting, su...",
+        "hash": "0x2c1a9f585dca6e34c3a746af68c397840fd0d0e6c3b202480b895d1b5eaa1a39"
+      },
+      {
+        "detail": "llama-3-70b: LONG-TERM BUY. Ecosystem expansion accel...",
+        "hash": "0x2367ccd99b3c06e07603dd8fb9eab7fad5a500d5e58dbb9f3be013ba7528faa5"
+      },
+      {
+        "detail": "llama-3-70b: REBALANCE. Move 15% from staking to Merc...",
+        "hash": "0xb34e26fac072d7adf31150ccd3bd681df0d5ce47c8aec4a4a326c0d38ba6209c"
+      },
+      {
+        "detail": "qwen-2.5-72b: CAUTION. Retail FOMO spike often precede...",
+        "hash": "0x727df1d71090209d7c4962748e5aaeec299d2835f27b479465219dd52eb38772"
+      },
+      {
+        "detail": "qwen-2.5-72b: OPPORTUNITY. Decorrelation means MNT alp...",
+        "hash": "0xd3527e298180908a7813cfe37359bfaa573d8ffd9ca2afae10ff8c2b396b7b9f"
+      },
+      {
+        "detail": "deepseek-v4: BUY. Strong support, low resistance. Tar...",
+        "hash": "0xd39575e167579b63486e096c52281d7ed234b4ed4e874b7ab237863fa04dcbe7"
+      },
+      {
+        "detail": "deepseek-v4: AGGRESSIVE BUY. Risk assets rallying, si...",
+        "hash": "0x57683d91470d06656e2ccd9616118774388e2818cb73f29e2c13615af5de31e6"
+      },
+      {
+        "detail": "deepseek-v4: EXECUTE. Combined calldata saves 40% gas...",
+        "hash": "0xc861229b7ab41e262ac377b0789aa4e4f634d561d6ede07ca79dda0d151a37ec"
+      },
+      {
+        "detail": "llama-3-70b: SELL VOL. IV premium suggests options ov...",
+        "hash": "0xbb08d106dfe6ce6f26119d065e3c95e654db0cebe6476d1ff9796b3d727ac330"
+      },
+      {
+        "detail": "deepseek-v4: WATCH. Single whale distribution, monito...",
+        "hash": "0x62db0ae3e31567934f7228df3c88d8815f2ed6d794a69c0a0cf728d355e49934"
+      },
+      {
+        "detail": "qwen-2.5-72b: ROTATE. Shift LP from Merchant Moe to Ag...",
+        "hash": "0xccf5a10cbad639bdaa4cd24540023bb23551723e31168f0425582a3c6647ebe0"
+      },
+      {
+        "detail": "deepseek-v4: ALL CLEAR. Execution conditions optimal ...",
+        "hash": "0x330803e9fbd5736d6ccbbe1744e4b3ed34dcc6464a7d44da5318bd5b8f6e217c"
+      },
+      {
+        "detail": "llama-3-70b: BUY SPOT. Negative funding = shorts payi...",
+        "hash": "0x26d6c7158c221e95c1ecb8c284e524d1b5748510dcf7dc0ba6df6e88ec5a29f5"
+      },
+      {
+        "detail": "deepseek-v4: SUMMARY. Sharpe 1.8 for the day, all ris...",
+        "hash": "0xf4767ec172befd45d7986da44e918f467eb88684935512024b8161a9474858fd"
+      }
+    ],
+    "Signal": [
+      {
+        "detail": "BUY merchant_moe conf=86%",
+        "hash": "0xfe8fa329ccd6fcd3e9fe45bbdfb255ad180b6e1adc1f793c2cc1fcb1ae553871"
+      },
+      {
+        "detail": "BUY agni_finance conf=79%",
+        "hash": "0xbf2894e93de23f24128326c2ce2572f8246779ecaa4cec2f44c410feaba6ce67"
+      },
+      {
+        "detail": "SELL merchant_moe conf=73%",
+        "hash": "0xe0f601d9331d87f563165b1aeb0b67ee3b736e9258b0bf9669330147e110be6d"
+      },
+      {
+        "detail": "BUY merchant_moe conf=92%",
+        "hash": "0x53ff678c402ada0531ab73055b265d5b02efac8697a029f53551324c6acc7709"
+      },
+      {
+        "detail": "BUY agni_finance conf=81%",
+        "hash": "0xb62fb2eb20be5bbda6b1a37b502c7fe28155c1be2d74932925819f521e92f6a6"
+      },
+      {
+        "detail": "SELL agni_finance conf=68%",
+        "hash": "0x7253b611db801b14ef9265db0a44be75db173f76e2455894ee87fb933fe6852b"
+      },
+      {
+        "detail": "BUY merchant_moe conf=94%",
+        "hash": "0xf5a1947fc7519e1c0c0c201a80f5577a9ff6bc2b055bbc366a4a4e2168699df0"
+      },
+      {
+        "detail": "HOLD merchant_moe conf=50%",
+        "hash": "0xa8f5e736f52d52931a8aa8475b5d5a0f9487e58f366fcf8829577220656e68db"
+      },
+      {
+        "detail": "BUY merchant_moe conf=77%",
+        "hash": "0x081e74f8b137cd213bc5205bfc982f9cdd800778a2b52085a1a76ce90e49f3c8"
+      },
+      {
+        "detail": "SELL merchant_moe conf=75%",
+        "hash": "0xac68a69de5009aaaa4e50add53796d54ea2d4096f22843498fbcdd24915f37ee"
+      },
+      {
+        "detail": "BUY agni_finance conf=89%",
+        "hash": "0x29746a3264407e74f3aef25cac7afa43a4b56bd92ff05f7df8f92666983bcc4a"
+      },
+      {
+        "detail": "BUY merchant_moe conf=83%",
+        "hash": "0xfd7e64916840232b43ff703c5ee4696600e3959f8032bb701a071c262236f909"
+      }
+    ],
+    "TEE": [
+      {
+        "detail": "analyst-v4.1: Bullish +2.8% target",
+        "hash": "0x865f650569db0f38d3b332c1e21ece1d865de8f61fa8539fba5b5f3988cdff4f"
+      },
+      {
+        "detail": "risk-v2.1: VaR=-5.1%, ES=-7.3%",
+        "hash": "0x16c624690de68c1c508d6dba8a79c05e099b3516952295a55ff6cb5959dbedbb"
+      },
+      {
+        "detail": "timing-v1.0: Enter at 0.398, limit order",
+        "hash": "0xcc617df1519555c864ba64831ecb85635277beb1b528d826211600b08fe40823"
+      },
+      {
+        "detail": "slippage-v1.2: Est slippage 0.18% via Agni",
+        "hash": "0xa4b9996b263a538239982763c205572f27e453668faa0f44b7472429baa43ac9"
+      },
+      {
+        "detail": "consensus-v1.0: 3/3 models agree BUY, weight=0",
+        "hash": "0x508a590cab08e7b3cb92ca19583964d4fe14299333992cc6319cbfda6774adeb"
+      },
+      {
+        "detail": "whale-v1.1: Distribution phase, 72% confid",
+        "hash": "0x6975a458e9bbf41ba3d93f56a22f48b5db2422a153c6d0c411f6561e21f48439"
+      },
+      {
+        "detail": "report-v1.0: All limits respected, Sharpe=1",
+        "hash": "0xf7720c572de1e12b7bcd6795c1a486df9472b4ce8d0742324279819b9a22dd51"
+      }
+    ],
+    "NFT": [
+      {
+        "detail": "Signal #4 PnL=450bps",
+        "hash": "0xd4e1224ac6e52d886f0845fad36f612fa1a26c46197f502efd571fb9b9ce8f10"
+      },
+      {
+        "detail": "Signal #5 PnL=-280bps",
+        "hash": "0xb1016c5305760dc6218f9d98fa36adfe16304b0ada776391bf349fb43b09347b"
+      },
+      {
+        "detail": "Signal #6 PnL=1200bps",
+        "hash": "0x5689126e148d220146fada2bfe85961b59de9cd4e70de5d7baf7348fb9967710"
+      },
+      {
+        "detail": "Signal #7 PnL=680bps",
+        "hash": "0xec8cbdf26370eb6400238c7a77263d8972ba3172b031d9b64484db49c6ddb23f"
+      },
+      {
+        "detail": "Signal #8 PnL=-90bps",
+        "hash": "0x64b051a5e9b8213edba7dc8e2bd6234956af3192149965a3bbddcab16a5a5e9f"
+      },
+      {
+        "detail": "Signal #9 PnL=2100bps",
+        "hash": "0xc9bc96f9652b4794f12d65d9f88f0ec7930954ccd4a789b155cf1656ad9d2871"
+      },
+      {
+        "detail": "Signal #10 PnL=340bps",
+        "hash": "0x2d38b542d340df8a74fbe9b68bb5be96ecdf374e54baf09932f7da0edbf6835c"
+      }
+    ],
+    "CommitReveal": [
+      {
+        "detail": "Commit #4: BUY-MNT-0.398-86-ascending-tri",
+        "hash": "0xa6606db82b24576779e3f52985e22069a5673936d92f64a933bdde90254ee33f"
+      },
+      {
+        "detail": "Commit #5: BUY-MNT-0.401-79-exchange-outf",
+        "hash": "0xd00a6050f52037aa55790e0afefd21c3698ac98b308d8a54930b877438c71188"
+      },
+      {
+        "detail": "Commit #6: SELL-MNT-0.440-73-take-profit-",
+        "hash": "0x2b95c1cfa972bcbbf8e18c803d95a814718ea0e6f3817731f5f0a8269bf33c82"
+      },
+      {
+        "detail": "Commit #7: BUY-MNT-0.395-92-cpi-macro-rot",
+        "hash": "0xf20bd211d40581056a40453d54234c0660d5c7efb01cae95d3705064b07ba3f6"
+      },
+      {
+        "detail": "Commit #8: BUY-MNT-0.402-81-negative-fund",
+        "hash": "0x402a04fd5094b50b46e55aeabb6db83c8249f8f694d195e7a9a94c6bdc54d199"
+      },
+      {
+        "detail": "Commit #9: SELL-MNT-0.435-68-whale-distri",
+        "hash": "0xf2c85b301cf92ce6815b5051a5c5ec3cd75f0c99cde681a015f50dfcfcd9b487"
+      },
+      {
+        "detail": "Commit #10: BUY-MNT-0.410-94-tvl-catalyst",
+        "hash": "0x41263c1594b928d13310946a4b12ff43778504d4b69ea2f8c79abd32f0b18e17"
+      },
+      {
+        "detail": "Commit #11: BUY-MNT-0.405-83-decorrelation",
+        "hash": "0x5f3336a7396f20ca3c9a51754cdddd42ea9201eb302a3a3d7a0c0649453138ec"
+      }
+    ],
+    "ABNK-Transfer": [
+      {
+        "detail": "analyst-performance-bonus: 250000 ABNK",
+        "hash": "0xf3a96a5e55184de3e518a4cf844335062f6e0a0277c1bf081d003c739453fcdf"
+      },
+      {
+        "detail": "executor-efficiency-reward: 150000 ABNK",
+        "hash": "0xc5a864e56fe82ade638045d3f2c06d25fb9434143bbefbc3dfc967733038af69"
+      },
+      {
+        "detail": "guard-security-bonus: 200000 ABNK",
+        "hash": "0x6c462a359857422d5b0970306cb92f1b1d7f334332275e983722d41ba24d2751"
+      },
+      {
+        "detail": "allocator-rebalance-reward: 100000 ABNK",
+        "hash": "0x66847beb668ffca1992875631a786a1abd47a678cd0552e6b36434756a9f4bcf"
+      },
+      {
+        "detail": "1M ABNK to AuctionHouse rewards",
+        "hash": "0x1e87a19ec9958cb8ffd408b32df8de6c8e6b9d42e07dc86a7afffefe07e02d56"
+      },
+      {
+        "detail": "2M ABNK to FeeDistributor",
+        "hash": "0x01ff8e10928b2433cfeb2d5196e11bf18c316fb8017caa3ea729b65b133da74b"
+      }
+    ],
+    "ABNK-Mint": [
+      {
+        "detail": "Mint 5M ABNK for LP bootstrap",
+        "hash": "0x6490526d4776ed6b3f89cfe057853b78467042332b4959ca208b6691d0658777"
+      }
+    ],
+    "ABNK-Approve": [
+      {
+        "detail": "Approve VE for 500k ABNK",
+        "hash": "0x8b0c2f644401981b7c994cab8d3ba93c4b50ca96a2ad28537059203413554128"
+      }
+    ],
+    "Reputation": [
+      {
+        "detail": "analyst score=78",
+        "hash": "0x4a73a03dfc01ac99eb7570bea81a39661c3685e1d9bfd970f8720fba5b12d877"
+      },
+      {
+        "detail": "executor score=88",
+        "hash": "0x678e40bff5194a1ec705e56ed0e3f42c08ac8f02e22a9fad9afc56a131d3b8e5"
+      },
+      {
+        "detail": "guard score=92",
+        "hash": "0x7b68b7cafbab034b94e02480bb5c514a7e9ca3da0b3e22e18c714c7b00e13ff1"
+      },
+      {
+        "detail": "analyst score=65",
+        "hash": "0x70a02b5f500edc1a4ebdda8a1fc942ce39d02e0b01b7656461d98094d9de681c"
+      },
+      {
+        "detail": "executor score=95",
+        "hash": "0x37a88bc931c63ef02693b6711f6368a97971bfaed194531fbf5c34d084aec74b"
+      },
+      {
+        "detail": "allocator score=82",
+        "hash": "0x5d814780233c90a2e0258ee55049ba8ad23ca9ef308336591f751d22cacce4a2"
+      },
+      {
+        "detail": "analyst score=90",
+        "hash": "0x20dfd08cec66b58b70cf656c73f7778db3044a4d0166642d04dcac7d35771f2c"
+      },
+      {
+        "detail": "guard score=55",
+        "hash": "0x986d570dccf623500e347ed795cc51e5bccd6ea2637498c6f7a69b10b86dc4e8"
+      },
+      {
+        "detail": "analyst score=-35",
+        "hash": "0x134ffa6c25563ebc41abe4c371a908c107c6882d51e2ae9c072a9299f6ea66f6"
+      },
+      {
+        "detail": "executor score=70",
+        "hash": "0x4ddb32595e7a4c91f069b6d0e1b9f41b589a260e3833177a7193c847d23e2af6"
+      },
+      {
+        "detail": "analyst score=88",
+        "hash": "0xa85a221ce177b32ccc2401cef445c2b24144dde4fbb9a95a4b38e3c6cc2e0b62"
+      },
+      {
+        "detail": "allocator score=68",
+        "hash": "0xde56e7e78f1770c607cbc670d520a0d97708667ea6c886d154dfe9230186ebbb"
+      },
+      {
+        "detail": "guard score=85",
+        "hash": "0x2063b4780ee81c22e2f5502375599f34b7d162a199665ab6c2c1ae1b466b7ba7"
+      },
+      {
+        "detail": "analyst score=72",
+        "hash": "0xf2451cd300febc5aabad1232d26824fe14df8832088d31ca82cadbe54d59c2ef"
+      },
+      {
+        "detail": "executor score=98",
+        "hash": "0x278fcdf5c08fa30434b83e1b330a2a397afbef4b70824043245ef07beacee308"
+      }
+    ],
+    "AnalystSignal": [
+      {
+        "detail": "BUY conf=87%",
+        "hash": "0x90bbf3c7126ac446649440ba6e1405bc104d1e121af1cdb76e24c58eba39b017"
+      },
+      {
+        "detail": "BUY conf=81%",
+        "hash": "0x4cb1fc89a30d0940c3466e71a29dc3e782cecbf6af1919b1860578814adfe48b"
+      },
+      {
+        "detail": "SELL conf=74%",
+        "hash": "0x43ac764f0b4a6e103ec03c5ef02f04ba1370dd0e939b35be85061b35b0d0869e"
+      },
+      {
+        "detail": "BUY conf=93%",
+        "hash": "0x6dc0aa588aa8eaf0cca8af810e40f1cbe040e671c79ff097099a0aebc755b7fc"
+      },
+      {
+        "detail": "HOLD conf=52%",
+        "hash": "0xecb593155a3b1b0294af7744a5eee5df4311a09b4ef8684f40d3357bcaddfd86"
+      }
+    ],
+    "AnalystReasoning": [
+      {
+        "detail": "deepseek-v4: 7/10 profitable, avg +2.3%, Sharpe ...",
+        "hash": "0x1e8dc50b84d25c87ad2989a146d6c36b530eddbe6c9f9aede98336a9eecd77c5"
+      },
+      {
+        "detail": "deepseek-v4: Executor adds 0.8% alpha via optima...",
+        "hash": "0xa81cc3cfee0dd088cd71d61fd6f84c9be54e32abb758cc73635a861a8ee4c2bf"
+      },
+      {
+        "detail": "llama-3-70b: Weight deepseek 0.6, qwen 0.4 → net...",
+        "hash": "0x32e60649db9de11d6af917336d529e3edb9083407021ca5d1ec5e54d45004907"
+      },
+      {
+        "detail": "deepseek-v4: 4.2% vault capacity remaining, max ...",
+        "hash": "0xcad37f7459b4539dbdcef3ec4577d8dda7f44b5c81f70dead69e7952cc8c3745"
+      },
+      {
+        "detail": "qwen-2.5-72b: Switch to Merchant Moe for next exe...",
+        "hash": "0xf4dd1500d138652bcb893f14aa06b127e7cefae1479e10b829d23bcbf5d257c5"
+      }
+    ]
+  }
+}

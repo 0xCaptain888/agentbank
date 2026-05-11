@@ -58,20 +58,24 @@ AgentBank 是一个多 AI 智能体协作的 DeFi 资产自主管理协议。每
 
 ### 链上活动摘要
 
-> 主网 56+ 笔交易覆盖所有协议模块 — [查看部署者活动](https://mantlescan.xyz/address/0x2F9fDE6B6FB8d7353aB80F082f85F0d70B809C3b)
+> 主网 138+ 笔交易覆盖所有协议模块 — [查看部署者活动](https://mantlescan.xyz/address/0x2F9fDE6B6FB8d7353aB80F082f85F0d70B809C3b) | [查看 Analyst 活动](https://mantlescan.xyz/address/0xc7e424c1e4b346c06a35241e7bca469477483683)
 
 | 活动类型 | 数量 | 示例交易 |
 |---|---|---|
 | 智能体身份注册 | 5 | [`0x6fa952f3...`](https://mantlescan.xyz/tx/0x6fa952f39d120e27b874f19b244eeae5aaad02d66ed5686fd5af4a6283d75eee) |
-| LLM 推理记录（哈希链） | 5 | [`0x35ebdceb...`](https://mantlescan.xyz/tx/0x35ebdcebadc55147bfaa838fbf7890f8743581fa76a67965c4225ece773c48e3) |
-| 交易信号（BUY/SELL/HOLD） | 8 | [`0x9dafdc02...`](https://mantlescan.xyz/tx/0x9dafdc02fddf338acc5eab4d2ed4c3bc7b73faae3203519c5bfbc8be3341aa56) |
-| TEE 认证（Phala SGX） | 3 | [`0xd98d6aa4...`](https://mantlescan.xyz/tx/0xd98d6aa4e2e75b0ffcff96a787c689176156953d7370cad3f6b5bbc52bb035b5) |
-| ABNK 代币转账 | 4 | [`0x2f28a8ab...`](https://mantlescan.xyz/tx/0x2f28a8abb0504e98e3f3d44cc5805593ba13fd90b63543e4849238759cb7b9ab) |
+| LLM 推理记录（哈希链） | 25 | [`0xefecf148...`](https://mantlescan.xyz/tx/0xefecf148924a6cbc452e67852ca99abd73459b920e97c3edae821282cb972142) |
+| 交易信号（BUY/SELL/HOLD） | 25 | [`0xfe8fa329...`](https://mantlescan.xyz/tx/0xfe8fa329ccd6fcd3e9fe45bbdfb255ad180b6e1adc1f793c2cc1fcb1ae553871) |
+| TEE 认证（Phala SGX） | 10 | [`0x865f6505...`](https://mantlescan.xyz/tx/0x865f650569db0f38d3b332c1e21ece1d865de8f61fa8539fba5b5f3988cdff4f) |
+| ABNK 代币操作（转账/铸造/授权） | 15 | [`0xf3a96a5e...`](https://mantlescan.xyz/tx/0xf3a96a5e55184de3e518a4cf844335062f6e0a0277c1bf081d003c739453fcdf) |
 | veABNK 锁仓（100 万 ABNK，1 年） | 1 | [`0x68c78438...`](https://mantlescan.xyz/tx/0x68c78438f260a35e286b4dc9628390894853c155942cc9fdc9b3349b06bd868f) |
-| Signal NFT 铸造 | 3 | [`0x7a58c31c...`](https://mantlescan.xyz/tx/0x7a58c31cebf87e0ee04c853f5bc32b02aafbc2f3e79e31babed61e1f7319248f) |
-| Commit-Reveal 信号 | 3 | [`0x11de1d6c...`](https://mantlescan.xyz/tx/0x11de1d6c5bff6a3161e57c11411afbce8998d57bd22bf1ce491ff846883ee5e9) |
-| 声誉反馈 | 10 | [`0xc41d0f25...`](https://mantlescan.xyz/tx/0xc41d0f25d20e581b88a12ddf654a883c73462116a2d2b1135af50963350fc989) |
+| Signal NFT 铸造 | 10 | [`0xd4e1224a...`](https://mantlescan.xyz/tx/0xd4e1224ac6e52d886f0845fad36f612fa1a26c46197f502efd571fb9b9ce8f10) |
+| Commit-Reveal 信号 | 11 | [`0xa6606db8...`](https://mantlescan.xyz/tx/0xa6606db82b24576779e3f52985e22069a5673936d92f64a933bdde90254ee33f) |
+| 声誉反馈 | 25 | [`0x4a73a03d...`](https://mantlescan.xyz/tx/0x4a73a03dfc01ac99eb7570bea81a39661c3685e1d9bfd970f8720fba5b12d877) |
 | 权限配置 | ~13 | — |
+
+**使用的 LLM 模型**：DeepSeek V4、Llama 3 70B、Qwen 2.5 72B（多模型集成）
+**信号来源**：部署者（管理员）+ Analyst Agent（独立钱包）
+**推理链**：带 IPFS 存储 URI 的哈希链接记录
 
 ---
 

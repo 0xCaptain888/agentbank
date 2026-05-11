@@ -84,20 +84,24 @@ All contracts are live on Mantle mainnet (chainId 5000). Deployer: [`0x2F9fDE6B.
 
 ### On-Chain Activity Summary
 
-> 56+ mainnet transactions across all protocol modules — [view deployer activity](https://mantlescan.xyz/address/0x2F9fDE6B6FB8d7353aB80F082f85F0d70B809C3b)
+> 138+ mainnet transactions across all protocol modules — [view deployer activity](https://mantlescan.xyz/address/0x2F9fDE6B6FB8d7353aB80F082f85F0d70B809C3b) | [view analyst activity](https://mantlescan.xyz/address/0xc7e424c1e4b346c06a35241e7bca469477483683)
 
 | Activity | Count | Sample Tx |
 |---|---|---|
 | Agent Identity Registrations | 5 | [`0x6fa952f3...`](https://mantlescan.xyz/tx/0x6fa952f39d120e27b874f19b244eeae5aaad02d66ed5686fd5af4a6283d75eee) |
-| LLM Reasoning Records (hash-chain) | 5 | [`0x35ebdceb...`](https://mantlescan.xyz/tx/0x35ebdcebadc55147bfaa838fbf7890f8743581fa76a67965c4225ece773c48e3) |
-| Trading Signals (BUY/SELL/HOLD) | 8 | [`0x9dafdc02...`](https://mantlescan.xyz/tx/0x9dafdc02fddf338acc5eab4d2ed4c3bc7b73faae3203519c5bfbc8be3341aa56) |
-| TEE Attestations (Phala SGX) | 3 | [`0xd98d6aa4...`](https://mantlescan.xyz/tx/0xd98d6aa4e2e75b0ffcff96a787c689176156953d7370cad3f6b5bbc52bb035b5) |
-| ABNK Token Transfers | 4 | [`0x2f28a8ab...`](https://mantlescan.xyz/tx/0x2f28a8abb0504e98e3f3d44cc5805593ba13fd90b63543e4849238759cb7b9ab) |
+| LLM Reasoning Records (hash-chain) | 25 | [`0xefecf148...`](https://mantlescan.xyz/tx/0xefecf148924a6cbc452e67852ca99abd73459b920e97c3edae821282cb972142) |
+| Trading Signals (BUY/SELL/HOLD) | 25 | [`0xfe8fa329...`](https://mantlescan.xyz/tx/0xfe8fa329ccd6fcd3e9fe45bbdfb255ad180b6e1adc1f793c2cc1fcb1ae553871) |
+| TEE Attestations (Phala SGX) | 10 | [`0x865f6505...`](https://mantlescan.xyz/tx/0x865f650569db0f38d3b332c1e21ece1d865de8f61fa8539fba5b5f3988cdff4f) |
+| ABNK Token Operations | 15 | [`0xf3a96a5e...`](https://mantlescan.xyz/tx/0xf3a96a5e55184de3e518a4cf844335062f6e0a0277c1bf081d003c739453fcdf) |
 | veABNK Lock (1M ABNK, 1yr) | 1 | [`0x68c78438...`](https://mantlescan.xyz/tx/0x68c78438f260a35e286b4dc9628390894853c155942cc9fdc9b3349b06bd868f) |
-| Signal NFT Minting | 3 | [`0x7a58c31c...`](https://mantlescan.xyz/tx/0x7a58c31cebf87e0ee04c853f5bc32b02aafbc2f3e79e31babed61e1f7319248f) |
-| Commit-Reveal Signals | 3 | [`0x11de1d6c...`](https://mantlescan.xyz/tx/0x11de1d6c5bff6a3161e57c11411afbce8998d57bd22bf1ce491ff846883ee5e9) |
-| Reputation Feedback | 10 | [`0xc41d0f25...`](https://mantlescan.xyz/tx/0xc41d0f25d20e581b88a12ddf654a883c73462116a2d2b1135af50963350fc989) |
+| Signal NFT Minting | 10 | [`0xd4e1224a...`](https://mantlescan.xyz/tx/0xd4e1224ac6e52d886f0845fad36f612fa1a26c46197f502efd571fb9b9ce8f10) |
+| Commit-Reveal Signals | 11 | [`0xa6606db8...`](https://mantlescan.xyz/tx/0xa6606db82b24576779e3f52985e22069a5673936d92f64a933bdde90254ee33f) |
+| Reputation Feedback | 25 | [`0x4a73a03d...`](https://mantlescan.xyz/tx/0x4a73a03dfc01ac99eb7570bea81a39661c3685e1d9bfd970f8720fba5b12d877) |
 | Permission & Setup | ~13 | — |
+
+**LLM Models Used**: DeepSeek V4, Llama 3 70B, Qwen 2.5 72B (multi-model ensemble)
+**Signal Sources**: Deployer (admin) + Analyst agent (independent wallet)
+**Reasoning Chain**: Hash-linked records with IPFS storage URIs
 
 ---
 
